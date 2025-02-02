@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript_06_osa</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./layout.css" />
+  </head>
+  <body>
+    <script>
+      // Tehtävä 1: Olion luominen ja tulostaminen
+      const henkilö = {
+        nimi: "Aleksi",
+        ikä: 30,
+      };
+
+      console.log(henkilö);
+
+      // Tehtävä 2: Olio-ominaisuuksien käyttäminen
+      console.log(henkilö.nimi); // Tulostaa: Aleksi
+      console.log(henkilö.ikä); // Tulostaa: 30
+
+      // Tehtävä 3: Olion ominaisuuksien muokkaaminen
+      henkilö.ikä = 31;
+      henkilö.maa = "Kroatia";
+
+      console.log(henkilö); // Tulostaa: { nimi: "Aleksi", ikä: 31, maa: "Kroatia" }
+
+      // Tehtävä 4: Sisäkkäiset oliot
+      const opiskelija = {
+        nimi: "Emilia",
+        tiedot: {
+          ikä: 22,
+          kurssi: "JavaScript",
+        },
+      };
+
+      console.log("Kurssi:", opiskelija.tiedot.kurssi); // Odotettu tulos: "Kurssi: JavaScript"
+
+      // Tehtävä 5: Ominaisuuksien poistaminen
+      delete henkilö.ikä;
+
+      console.log(henkilö); // Odotettu tulos: { nimi: "Aleksi", maa: "Kroatia" }
+
+      // Tehtävä 6: Olion avaimet ja arvot
+      const avaimet = Object.keys(henkilö);
+      const arvot = Object.values(henkilö);
+
+      console.log("Avaimet:", avaimet); // Odotettu tulos: ["nimi", "maa"]
+      console.log("Arvot:", arvot); // Odotettu tulos: ["Aleksi", "Kroatia"]
+
+      // Tehtävä 7: Olion metodien käyttäminen
+      henkilö.tervehdi = function () {
+        return "Hei, nimeni on " + this.nimi;
+      };
+
+      console.log(henkilö.tervehdi());
+    </script>
+  </body>
+</html>
