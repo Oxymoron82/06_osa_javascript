@@ -56,6 +56,81 @@
       };
 
       console.log(henkilö.tervehdi());
+
+      // Oliot 02
+
+      //Tehtävä 1
+
+      const kirjasto = [
+        {
+          otsikko: "Tuntematon sotilas",
+          kirjailija: "Väinö Linna",
+          julkaisuvuosi: 1954,
+        },
+        {
+          otsikko: "Sinuhe egyptiläinen",
+          kirjailija: "Mika Waltari",
+          julkaisuvuosi: 1945,
+        },
+      ];
+
+      //Tehtävä 2
+
+      console.log(kirjasto[0].otsikko);
+
+      kirjasto[1].julkaisuvuosi = 1950;
+      console.log(kirjasto[1]);
+
+      //Tehtävä 3
+
+      kirjasto[0].lajityypit = ["Historiallinen", "Sotakirjallisuus"];
+
+      kirjasto[0]["onSaatavilla"] = true;
+
+      console.log(kirjasto[0]);
+
+      //Tehtävä 4
+
+      function Kirja(otsikko, kirjailija, julkaisuvuosi, lajityypit) {
+        this.otsikko = otsikko;
+        this.kirjailija = kirjailija;
+        this.julkaisuvuosi = julkaisuvuosi;
+        this.lajityypit = lajityypit;
+      }
+
+      const uusiKirja = new Kirja("Puhdistus", "Sofi Oksanen", 2008, [
+        "Draama",
+        "Historiallinen",
+      ]);
+      kirjasto.push(uusiKirja);
+
+      console.log(kirjasto);
+
+      //Tehtävä 5
+
+      function luoKirja(otsikko, kirjailija, julkaisuvuosi, lajityypit) {
+        return {
+          otsikko: otsikko,
+          kirjailija: kirjailija,
+          julkaisuvuosi: julkaisuvuosi,
+          lajityypit: lajityypit,
+        };
+      }
+
+      const uusiKirja2 = luoKirja("Hobitti", "J.R.R. Tolkien", 1937, [
+        "Fantasia",
+        "Seikkailu",
+      ]);
+      console.log(uusiKirja2);
+
+      //Tehtävä 6
+
+      const kirjastoJSON = JSON.stringify(kirjasto, null, 2);
+      console.log(kirjastoJSON);
+
+      const kirjastoObjekti = JSON.parse(kirjastoJSON);
+
+      console.log(kirjastoObjekti[0].otsikko);
     </script>
   </body>
 </html>
